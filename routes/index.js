@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET Cambio Divisas. */
 router.get('/changes', function(req, res, next) {
-  res.render('index', { title: 'Cambio Divisas' });
+  res.render('cambio_divisas', { title: 'Cambio Divisas' });
 });
 
 module.exports = router;
