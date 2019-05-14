@@ -21,7 +21,9 @@
   },
   "description": "prueba tecnica Belatrix",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  },
   "author": "JCDM",
   "license": "ISC"
 }

@@ -7,8 +7,10 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET Cambio Divisas. */
-router.get('/changes', function(req, res, next) {
+router.get('/cambio_divisas', function(req, res, next) {
   res.render('cambio_divisas', { title: 'Cambio Divisas' });
 });
+
+router.use('/static', express.static(__dirname + '/public'));
 
 module.exports = router;

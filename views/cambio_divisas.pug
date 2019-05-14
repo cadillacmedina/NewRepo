@@ -1,51 +1,52 @@
 extends layout
 
 block content
-    nav.navbar.navbar-expand-md.navbar-dark.bg-dark-mb-4
 
-    a.navbar-brand(href='#') Mi Proyecto
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.mb-4
+    a.navbar-brand(href='#') Prueba Tecnica
     button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-controls='navbarCollapse' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     #navbarCollapse.collapse.navbar-collapse
       ul.navbar-nav.mr-auto
-        li.nav-item
-          a.nav-link(href='/') Home
         li.nav-item.active
-          a.nav-link(href='changes')
-            | Cambio Divisas
+          a.nav-link(href='/') Home 
+        li.nav-item
+          a.nav-link(href='cambio_divisas') 
+            | Divisas
             span.sr-only (current)
       form.form-inline.mt-2.mt-md-0
         input.form-control.mr-sm-2(type='text' placeholder='Buscar' aria-label='Buscar')
         button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Buscar
-
-    main.container(role='main')
+  main.container(role='main')
     .jumbotron
-      h1 Nosotros
+      h1 Conversor Divisas
       p.lead
-        | Estás en la página Nosotros
-      a.btn.btn-lg.btn-primary(href='#' role='button') Botón &raquo;
-    .container
+        | Estás en la página Conversor de divisas
 
-        
-    .row
-      .col-md-4
-        h2 Contenido
-        p
-          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        p
-          a.btn.btn-secondary(href='#' role='button') Ver más &raquo;
-      .col-md-4
-        h2 Contenido
-        p
-          | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        p
-          a.btn.btn-secondary(href='#' role='button') Ver más &raquo;
-      .col-md-4
-        h2 Contenido
-        p
-          | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-        p
-          a.btn.btn-secondary(href='#' role='button') Ver más &raquo;
+    .container
+    div.form-group
+        table 
+            .row.modal-body.row
+                div.col-md-6 
+                    .col-xs-3(title="USD")
+                        h2.display-2.text-center#lblUSD USD
+                        div.input-group.mb-3
+                            div.input-group-prepend
+                                span.input-group-text $
+                                span.input-group-text 0,00
+                            input.form-control(type="text")#txtUSD
+                div.col-md-6         
+                    .col-xs-3(title="EUR")
+                        h2.display-2.text-center EUR
+                        div.input-group.mb-3
+                            div.input-group-prepend
+                                span.input-group-text €
+                                span.input-group-text 0,00
+                            input.form-control(type="text", disabled)#txtEUR
+
+            .row(colspan=2 title)
+                div.col.text-center
+                    input.btn-outline-dark.btn-lg(type="button", text="Calcular", value="Calcular")#btnConvertir
     hr
 
     
