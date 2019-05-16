@@ -3,9 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/popper.js/dist'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -44,4 +46,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.use('/request',express.static(__dirname + '/http_call/request'))
+
+
 module.exports = app;
+
+

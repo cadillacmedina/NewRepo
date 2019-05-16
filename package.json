@@ -6,6 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "ajax": "0.0.4",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "commander": "^2.20.0",
     "cookie-parser": "^1.4.4",
@@ -13,11 +15,16 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-generator": "^4.16.1",
+    "fixer-api": "^2.0.0",
+    "fixer-io-node": "^1.0.2",
     "http-errors": "~1.6.3",
     "jquery": "^3.4.1",
     "morgan": "^1.9.1",
+    "node-fetch": "^2.5.0",
     "popper.js": "^1.15.0",
-    "pug": "^2.0.0-beta11"
+    "pug": "^2.0.3",
+    "request": "^2.88.0",
+    "yargs": "^13.2.4"
   },
   "description": "prueba tecnica Belatrix",
   "main": "index.js",
