@@ -2,10 +2,7 @@ const request = require('request');
 const argv = require('yargs');
 const express = require('express');
 var dataFixer = express();
-
-let direccion = argv.direccion;
-let url = 'http://data.fixer.io/api/convert?access_key=8c82f84a2f5d2a368a98d9201160100b&from=EUR&to=USD&amount=${cantidad}';
-
+let url = 'http://data.fixer.io/api/convert?access_key=8c82f84a2f5d2a368a98d9201160100b&from=EUR&to=USD&amount=';
 dataFixer=request({
     url: url,
     json: true
@@ -24,3 +21,7 @@ request('http://data.fixer.io/api/latest?access_key=8c82f84a2f5d2a368a98d9201160
 );
 */
 module.exports= dataFixer;
+
+
+
+

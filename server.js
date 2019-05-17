@@ -1,6 +1,4 @@
-const color = require('colors');
-const express = require('express');
-// Se carga el módulo de HTTP
+
 const http = require("http");
 
 // Creación del servidor HTTP, y se define la escucha
@@ -16,8 +14,6 @@ http.createServer(function(request, response) {
 
 // Se escribe la URL para el acceso al servidor
 console.log('Servidor en la url http://127.0.0.1:8000/');
-
-
 
 /*
 const handleServer = function(req,res)

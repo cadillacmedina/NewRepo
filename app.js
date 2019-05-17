@@ -6,6 +6,8 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dataFixer = require('fixer-api');
+
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 var app = express();
@@ -47,6 +49,64 @@ app.use(function(err, req, res, next) {
 });
 
 app.use('/request',express.static(__dirname + '/http_call/request'))
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.get('/', function(req,res){
+  return res.redirect('/index')
+});
+
+app.get('/cambio_divisas', function(req,res){
+  return res.send(req.query); //?txtEUR=XX
+});
+app.get('/cambio_divisas', function(req,res){
+  return res.render('cambio_divisas')
+});
+/*
+app.post('/resultado', function(req,res){
+  let url = 'http://data.fixer.io/api/convert?access_key=8c82f84a2f5d2a368a98d9201160100b&from=EUR&to=USD&amount=2000';
+  dataFixer= req({
+      url: url,
+      json: true
+  },(error,Response,body)=>{
+    console.log(JSON.stringify(body,undefined,1));
+
+  });
+  return  res.send('<html><body><p>HOLA</p></html></body>');
+
+});
+app.get('/resultado', function(req, res) {
+  var newAmount = cambio(req.query.amount)
+  res.send("este es el amount modificado " + newAmount);
+});*/
+
+app.get('/resultado', function(req, res) {
+  cambio(req.query.amount, res)  
+});
+
+function cambio(amount, res)
+{
+  let url = 'http://data.fixer.io/api/latest?access_key=8c82f84a2f5d2a368a98d9201160100b';
+  //let url = 'http://data.fixer.io/api/convert?access_key=8c82f84a2f5d2a368a98d9201160100b&from=EUR&to=USD&amount='+amount;
+  dataFixer=request({
+      url: url,
+      json: true
+  },(error,Response,body)=>{
+     
+	  var newAmount =JSON.stringify(body,undefined,1)
+	   console.log(newAmount);
+	  res.send("este es el amount modificado " + newAmount);
+  });
+}
+
+/*
+
+app.get('/resultado/:txtEur', function(req, res) {
+  res.send("tagId is set to " + req.params.txtEUR);
+});
+*/
+
 
 
 module.exports = app;

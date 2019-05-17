@@ -25,12 +25,12 @@ block content
 
     .container
     div.form-group
-    form(action="/test", method="post")
+    form(action="/resultado",method = "get")
       table 
             .row.modal-body.row
                 div.col-md-6 
                     .col-xs-3(title="EUR")
-                        h2.display-2.text-center#lblUSD EUR
+                        h2.display-2.text-center#lblEUR EUR
                         div.input-group.mb-3
                             div.input-group-prepend
                                 span.input-group-text €
@@ -38,7 +38,7 @@ block content
                             input.form-control.decimales(type="number",name="txtEUR",value="")#txtEUR
                 div.col-md-6         
                     .col-xs-3(title="USD")
-                        h2.display-2.text-center EUR
+                        h2.display-2.text-center#lblUSD USD
                         div.input-group.mb-3
                             div.input-group-prepend
                                 span.input-group-text $
@@ -46,7 +46,7 @@ block content
                             input.form-control.decimales(type="number",name="txtUSD" disabled)#txtUSD
             .row(colspan=2 title)
                 div.col.text-center
-                    input.btn-outline-dark.btn-lg(type="button",text="Calcular", value="Calcular")#btnConvertir
+                    input.btn-outline-dark.btn-lg(type="submit",text="Calcular", value="Calcular")#btnConvertir
     hr
 
     

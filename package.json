@@ -17,6 +17,7 @@
     "express-generator": "^4.16.1",
     "fixer-api": "^2.0.0",
     "fixer-io-node": "^1.0.2",
+    "fs": "0.0.1-security",
     "http-errors": "~1.6.3",
     "jquery": "^3.4.1",
     "morgan": "^1.9.1",
@@ -27,7 +28,7 @@
     "yargs": "^13.2.4"
   },
   "description": "prueba tecnica Belatrix",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {
     "node-sass": "^4.12.0"
   },
